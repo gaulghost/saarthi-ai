@@ -5,10 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(45deg, #49a09d, #5f2c82) 50% 0 no-repeat;
+  background: url('images/bg-01.jpg') 50% 0 no-repeat;
   background-size: cover;
   background-position: center center;
-  overflow: hidden;
+  background-color: rgba(0,0,0,0.8);
+  background-blend-mode: darken;
 }
 
 code {
