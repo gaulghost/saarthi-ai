@@ -392,7 +392,7 @@ input.input100 {
 @media only screen and (min-width: 850px) {
 	.closeform-btn{
 		position: absolute;
-		top: 10%;
+		top: 7%;
 		left: 50%;
 		transform: translate(-50%,-50%);
 	}

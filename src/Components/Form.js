@@ -1,40 +1,41 @@
 import React from 'react';
 import Label from './Label.js'
+
 import { ValidatorForm, TextValidator,SelectValidator} from 'react-material-ui-form-validator';
 import { Button} from '@material-ui/core';
+import "../Styles/form.css";
+
 import { MenuItem } from '@material-ui/core';
 
 
 // import Button from './Button'
-import "../Styles/form.css";
 
 const Form = (props) => {
 
-    // const styleForm = {
-    //     backgroundColor: 'rgba(255,255,255,1)',
-    //     font: 'inherit',
-    //     padding: '30px',
-    //     margin: '30px auto',
-    //     fontSize: '18px',
-    //     width: '80vw'
-    // }
+    const styleLabels = {
+        textAlign: 'center!important',
+        width: '70%',
+        margin: '7px',
+    }
 
-    // const styleLabels = {
-    //     textAlign: 'left',
-    // }
+    const buttonStyle = {
+        display: 'inline-block',
+    	display: 'flex',
+    	justifyContent: 'center',
+    	alignItems: 'center',
+    	padding: '0 20px',
+    	minWidth: '160px',
+    	height: '50px',
+    	backgroundColor: '#57b846',
+    	borderRadius: '25px',
+    	fontSize: '16px',
+    	color: '#fff',
+    	lineHeight: '1.2',
+    	transition: 'all .4s',
+    	margin:'5vh auto',
+    }
 
     return(
-        /*<form style={styleForm}>
-            <div style={styleLabels}>
-                <Label name='name' content="Name" type="text" placeholder="Full Name" value={props.formData.name} onChange={props.setValue}/>
-                <Label name='emp_id' content="Employee ID" type="text" placeholder="Alloted ID" value={props.formData.emp_id} onChange={props.setValue}/>
-                <Label name='dept' content="Department" type="text" placeholder="Dept. you are working in" value={props.formData.dept} onChange={props.setValue}/>
-                <Label name='email' content="Email ID" type="email" placeholder="Registered Email ID" value={props.formData.email} onChange={props.setValue}/>
-                <Label name='doj' content="Date of Joining" type="date" placeholder="Joining Date" value={props.formData.doj} onChange={props.setValue}/>
-            </div>
-            <Button clicked={(e)=>{props.clickedSubmit(e)}} name="Submit"/>
-            <Button clicked={props.clickedClear} name="Clear"/>
-        </form>*/
         <div class="container-contact100">
             <button className="contact100-form-btn closeform-btn" onClick={props.closeForm}>
                 <span>
@@ -56,6 +57,7 @@ const Form = (props) => {
                 onError={errors => console.log(errors)}
             >
                 <TextValidator
+                    style={styleLabels}
                     label="Name"
                     onChange={props.setValue}
                     name="name"
@@ -64,6 +66,7 @@ const Form = (props) => {
                     errorMessages={['this field is required']}
                 />
                 <TextValidator
+                    style={styleLabels}
                     label="Employee ID"
                     onChange={props.setValue}
                     name="emp_id"
@@ -72,20 +75,22 @@ const Form = (props) => {
                     errorMessages={['this field is required']}
                 />
                 <SelectValidator
-                label = "Department"
+                    style={styleLabels}
+                    label = "Department"
                     onChange = {props.setValue}
-                   
-                   value={props.formData.dept}
-                   name="dept"
-                   validators={["required"]}
-                   errorMessages={["this field is required"]}
-                   className=""
+                    value={props.formData.dept}
+                    name="dept"
+                    validators={["required"]}
+                    errorMessages={["this field is required"]}
+                    className=""
                  >
                    <MenuItem value={10}>Ten</MenuItem>
                    <MenuItem value={20}>Twenty</MenuItem>
                    <MenuItem value={30}>Thirty</MenuItem>
-         </SelectValidator>
+                </SelectValidator>
                 <TextValidator
+                    type="email"
+                    style={styleLabels}
                     label="Email"
                     onChange={props.setValue}
                     name="email"
@@ -94,6 +99,8 @@ const Form = (props) => {
                     errorMessages={['this field is required']}
                 />
                 <TextValidator
+                    style={styleLabels}
+                    type="date"
                     label="Date of Joining"
                     onChange={props.setValue}
                     name="doj"
@@ -101,7 +108,10 @@ const Form = (props) => {
                     validators={['required']}
                     errorMessages={['this field is required']}
                 />
-                <Button type="submit">Submit</Button>
+                <div className="container-contact100-form-btn">
+                <Button style={buttonStyle} type="submit">Submit</Button>
+                <Button style={buttonStyle} onClick = {props.clickedClear}>Clear</Button>
+                </div>
             </ValidatorForm>
                  {/*<form className="contact100-form validate-form">
                     <Label name='name' content="Name" type="text" placeholder="Full Name" value={props.formData.name} onChange={props.setValue}/>
