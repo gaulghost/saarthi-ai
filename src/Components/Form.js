@@ -32,7 +32,7 @@ const Form = (props) => {
     	color: '#fff',
     	lineHeight: '1.2',
     	transition: 'all .4s',
-    	margin:'5vh auto',
+    	margin:'1vh auto 2vh auto',
     }
 
     return(

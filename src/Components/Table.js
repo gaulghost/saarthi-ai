@@ -33,7 +33,7 @@ const Table = (props) => {
         marginTop: '30vh',
         minWidth: '276px',
         width: '70vw',
-        maxHeight: '50vh',
+        maxHeight: '60vh',
         overflow: 'auto'
     }
 
