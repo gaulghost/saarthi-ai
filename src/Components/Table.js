@@ -31,7 +31,7 @@ const Table = (props) => {
     const styleOuter = {
         margin: '0 auto',
         marginTop: '30vh',
-        minWidth: '800px',
+        minWidth: '276px',
         width: '70vw',
         maxHeight: '50vh',
         overflow: 'auto'
